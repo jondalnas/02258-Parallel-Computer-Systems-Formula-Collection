@@ -1,7 +1,7 @@
 \documentclass{article}
 
 \title{02258 Parallel Computer Systems Formula Collection}
-\author{Jonas Birkedal Dudal Jensen (s203849)}
+\author{Jonas Birkedal Dudal Jensen (s203849) \and Lene Højberg Christensen (s203879)}
 \date{}
 
 \begin{document}
@@ -162,4 +162,61 @@
 	
 	\section{Aggregating Messages}
 		For formulas describing when message aggregation pays off, see (10.1) and (10.2) on page 248.
+
+	\section{OpenMP code examples}
+		\begin{table}[htbp]
+			\centering
+			\begin{tabular}{c|c}
+				Description & page nr.\\
+				\hline
+				Parallel region & 145\\
+				Worksharing loop with critical region & 148\\
+				Worksharing loop with reduction & 151\\
+				Taksing & 153\\
+				If clause & 168\\
+				Nowait clause & 170\\
+				Minimizing nr of parallel regions & 170 - 171\\
+				Removing load imbalance & 172\\
+				ccNUMA optimized & 189\\
+				Vector mode hybrid example & 265\\
+				Task mode hybrid example & 266
+			\end{tabular}
+			\caption{OpenMP code examples}
+		\end{table}
+
+	\newpage
+
+	\section{MPI functions and code examples}
+		\begin{table}[htbp]
+			\centering
+			\begin{tabular}{c|c}
+				Description & page nr.\\
+				\hline
+				Hello world in Fortan & 205\\
+				Hello world in C & 206\\
+				MPI Fortan type conversions & 207\\
+				MPI C type conversions & 208\\
+				Send and receive functions & 208\\
+				Get size of message function & 209\\
+				Parallelization example & 210\\
+				Barrier function & 213\\
+				Broadcast function & 213\\
+				Reduce function & 214\\
+				Nonblocking send and receive functions & 217\\
+				Test and wait functions & 217\\
+				Waitall function & 218\\
+				Example of nonblocking point-to-point communication & 219\\
+				Table of MPI functions with blocking and nonblocking & 220\\
+				Cart create function & 221\\
+				Dims create function & 222\\
+				Cart coords and cart rank functions & 222\\
+				Cart shift function & 223\\
+				Cart example & 228\\
+				Create new type & 249\\
+				Vector mode hybrid example & 265\\
+				Task mode hybrid example & 266
+			\end{tabular}
+			\caption{MPI functions and code examples}
+		\end{table}
+
 \end{document}
