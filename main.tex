@@ -6,4 +6,46 @@
 
 \begin{document}
 	\maketitle
+	\newpage
+
+	\tableofcontents
+	\newpage
+
+	\section{Pipeline Speedup, Throughput, and Results per Cycle (p. 10)}
+		Image of pipeline can be seen in figure 1.5 page 9, and figure 1.6 on page 11 shows the throughput for different $m$.
+
+		\subsection{Speedup}
+		\begin{equation}
+			\frac{T_{seq}}{T_{pipe}}=\frac{mN}{N+m-1}
+		\end{equation}
+		Where $T_{seq}$ is the sequential execution time, $T_{pipe}$ is the pipelined execution time, $m$ is the depth of the pipeline and $N$ is the number of times it should be executed.
+
+		\subsection{Throughput}
+		\begin{equation}
+			\frac{N}{T_{pipe}}=\frac{1}{1+\frac{m-1}{N}}
+		\end{equation}
+		Where $N$ is the number of times it should be executed, $T_{pipe}$ is the pipelined execution time, and $m$ is the depth of the pipeline.
+
+		\subsection{Results per cycle}
+		\begin{equation}
+			N_c=\frac{(m-1)p}{1-p}
+		\end{equation}
+		Where $N_c$ is the size of the pipeline resulting in $p$ results per cycle, and $m$ is the depth of the pipeline.
+	
+	\section{Caches and speed (p. 16)}
+		Image of cache performance gain agains cache reuse ratio is seen in figure 1.9 page 16.
+
+		\begin{equation}
+			G(\tau, \beta)=\frac{T_m}{T_{av}}=\frac{\tau}{\beta+\tau(1-\beta)}
+		\end{equation}
+		Where $G$ is the performance gain, $T_m$ is the access time to main memory, $T_{av}$ is the average access time, $\tau$ is the speedup factor of the memory compared to main memory, and $\beta$ is the cache reuse ratio.
+	
+	\section{Prefetching (p. 21)}
+		An example of prefetching is shown in figure 1.13 on page 22.
+	
+		\begin{equation}
+			P=1+\frac{T_l B}{L_c}
+		\end{equation}
+		Where $P$ is the number of prefetches required to saturate the pipeline, $T_l$ is the latency of a miss, $B$ is the bandwith, and $L_c$ is the length of a cache line.
+
 \end{document}
