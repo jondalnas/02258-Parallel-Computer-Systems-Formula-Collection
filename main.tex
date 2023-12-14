@@ -46,14 +46,14 @@
 		\begin{equation}
 			P=1+\frac{T_l B}{L_c}
 		\end{equation}
-		Where $P$ is the number of prefetches required to saturate the pipeline, $T_l$ is the latency of a miss, $B$ is the bandwith, and $L_c$ is the length of a cache line.
+		Where $P$ is the number of prefetches required to saturate the pipeline, $T_l$ is the latency of a miss, $B$ is the bandwidth, and $L_c$ is the length of a cache line.
 	
 	\section{Machine and Code Balance (p. 63)}
 		\subsection{Machine Balance}
 			\begin{equation}
 				B_m=\frac{b_{max}}{P_{max}}
 			\end{equation}
-			Where $B_m$ is the machine balance of the machine, $b_{max}$ is the maximal memory bandwith (Words$/$sec), and $P_{max}$ is the peak performance (Flops$/$sec).
+			Where $B_m$ is the machine balance of the machine, $b_{max}$ is the maximal memory bandwidth (Words$/$sec), and $P_{max}$ is the peak performance (Flops$/$sec).
 
 		\subsection{Code Balance}
 			\begin{equation}
@@ -71,12 +71,25 @@
 			\begin{equation}
 				l=\min\left(1,\frac{B_m}{B_c}\right)
 			\end{equation}
-			Where $l$ is the lightspeed of a loop, or how much the loop is bandwith limited, $B_m$ is the machine balance of the machine, and $B_c$ is the code balance of the program.
+			Where $l$ is the lightspeed of a loop, or how much the loop is bandwidth limited, $B_m$ is the machine balance of the machine, and $B_c$ is the code balance of the program.
 		
 		\subsection{Performance from Lightspeed}
 			For STREAM specific performances, see (3.5) page 68.
 			\begin{equation}
 				P=lP_{max}=\min\left(P_{max},\frac{b_{max}}{B_c}\right)
 			\end{equation}
-			Where $P$ is the performance of running the code on the machine, $l$ is the lightspeed of a loop, $P_{max}$ is the peak performance, $b_{max}$ is the maximal memory bandwith, and $B_c$ is the code balance of the program.
+			Where $P$ is the performance of running the code on the machine, $l$ is the lightspeed of a loop, $P_{max}$ is the peak performance, $b_{max}$ is the maximal memory bandwidth, and $B_c$ is the code balance of the program.
+	
+	\section{Communication Bandwidth and Trasfer Time (p. 105)}
+		To calculate the increase in effective bandwidth see (4.3) page 108.
+
+		\begin{equation}
+			T=T_l+\frac{N}{B}
+		\end{equation}
+		Where $T$ is the total transfer time, $T_l$ is the latency, $N$ is the nuber of bytes in the message, and $B$ is the bandwidth.
+
+		\begin{equation}
+			B_{eff}=\frac{N}{T_l+\frac{N}{B}}
+		\end{equation}
+		Where $B_{eff}$ is the effective bandwidth of the communication, $T$ is the total transfer time, $T_l$ is the latency, $N$ is the nuber of bytes in the message, and $B$ is the bandwidth.
 \end{document}
