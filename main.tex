@@ -92,4 +92,63 @@
 			B_{eff}=\frac{N}{T_l+\frac{N}{B}}
 		\end{equation}
 		Where $B_{eff}$ is the effective bandwidth of the communication, $T$ is the total transfer time, $T_l$ is the latency, $N$ is the nuber of bytes in the message, and $B$ is the bandwidth.
+	
+	\section{Strong Scaling and Ahmdal's Law (p. 123)}
+		For calculations of the performance of the serial and parallel programs, see (5.5) and (5.6) on page 123.
+
+		\subsection{Strong Scaling Execution Time}
+			\begin{equation}
+				T=s+\frac{p}{N}
+			\end{equation}
+			Where $T$ is the time it takes to execute the program, $s$ is the time it takes to execute the serial part of the program, $p$ is the time it takes to execute the parallel part of the program, and $N$ is the number of processes.
+
+		\subsection{Ahmdal's Law}
+			\begin{equation}
+				S=\frac{P_p}{P_s}=\frac{1}{s+\frac{1-s}{N}}
+			\end{equation}
+			Where $S$ is the speedup, $P_p$ is the performance of the parallel part, $P_s$ is the performance of the serial part, $s$ is the time it takes to execute the serial part of the program, $p$ is the time it takes to execute the parallelizable part of the program, and $N$ is the number of processes.
+	
+	\section{Week Scaling (p. 123)}
+		\subsection{Week Scaling Execution Time}
+			\begin{equation}
+				T=s+pN^{\alpha-1}
+			\end{equation}
+			Where $T$ is the time it takes to execute the program, $s$ is the time it takes to execute the non-parallelizable part of the program, $p$ is the time it takes to execute the parallelizable part of the program, $N$ is the number of processes, and $\alpha$ is a constant defining how much the work amount scales with $N$.
+
+		\subsection{Week Scaling Speedup}
+			For another definition of work in week scaling, see (5.17) on page 125.
+
+			\begin{equation}
+				S=1+\frac{p}{s}N^{\alpha}
+			\end{equation}
+			Where $S$ is the speedup, $s$ is the time it takes to execute the non-parallelizable part of the program, $p$ is the time it takes to execute the parallelizable part of the program, $N$ is the number of processes, and $\alpha$ is a constant defining how much the work amount scales with $N$.
+
+		\subsection{Gustafon's Law}
+			\begin{equation}
+				S=s+(1-s)N
+			\end{equation}
+			Where $S$ is the speedup when work load increases linearly with $N$, $s$ is the time it takes to execute the non-parallelizable part of the program, and $N$ is the number of processes.
+	
+	\section{Parallel Efficiency (p. 125)}
+		\begin{equation}
+			\varepsilon=\frac{S}{N}
+		\end{equation}
+		Where $\varepsilon$ is the effeciency of the parallelization, meaning how much it is utilized, $S$ is the speedup of the program, and $N$ is the number of processes.
+
+		\subsection{Week Scaling Effeciency}
+			For another definition of work in week scaling, see (5.20) on page 126.
+
+			\begin{equation}
+				\varepsilon=\frac{sN^{-\alpha}+1(1-s)}{sN^{1-\alpha}+1(1-s)}
+			\end{equation}
+			Where $\varepsilon$ is the effeciency of the parallelization, $s$ is the time it takes to execute the serial part of the program, $p$ is the time it takes to execute the parallel part of the program, $N$ is the number of processes, and $\alpha$ is a constant defining how much the work amount scales with $N$.
+	
+	\section{Crossover Point for when to Optimize Serial vs. Parallel}
+			\begin{equation}
+				N\geq\frac{1}{s}-1
+			\end{equation}
+			Where $N$ is the number of workers needed before optimizing the serializable part is more efficient than optimizing the parallel part, and $s$ is the executiontime of the serial part of the program.
+	
+	\section{Refined Performance Models}
+			For a list of speedups with non-zero communication overhead, see page 128 and 129.
 \end{document}
